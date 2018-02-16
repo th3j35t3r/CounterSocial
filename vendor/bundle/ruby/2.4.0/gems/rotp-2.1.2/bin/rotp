@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-$: << File.expand_path('../../lib', __FILE__)
-require 'rotp'
-require 'rotp/cli'
-
-ROTP::CLI.new(File.basename(__FILE__), ARGV).run

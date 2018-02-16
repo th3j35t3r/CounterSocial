@@ -1,7 +1,0 @@
-inherit_from:
-  - http://shopify.github.io/ruby-style-guide/rubocop.yml
-
-AllCops:
-  Exclude:
-    - 'vendor/**/*'
-

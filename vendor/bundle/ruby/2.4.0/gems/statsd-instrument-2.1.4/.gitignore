@@ -1,7 +1,0 @@
-.yardoc
-doc
-*.gem
-.bundle
-Gemfile.lock
-pkg/*
-vendor/

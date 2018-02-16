@@ -1,6 +1,0 @@
-pkg
-coverage
-doc
-log
-*.lock
-bin/
