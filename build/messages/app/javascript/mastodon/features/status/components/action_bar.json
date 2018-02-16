@@ -1,0 +1,62 @@
+[
+  {
+    "id": "status.delete",
+    "defaultMessage": "Delete"
+  },
+  {
+    "id": "status.mention",
+    "defaultMessage": "Mention @{name}"
+  },
+  {
+    "id": "status.reply",
+    "defaultMessage": "Reply"
+  },
+  {
+    "id": "status.reblog",
+    "defaultMessage": "Boost"
+  },
+  {
+    "id": "status.cannot_reblog",
+    "defaultMessage": "This post cannot be boosted"
+  },
+  {
+    "id": "status.favourite",
+    "defaultMessage": "Favourite"
+  },
+  {
+    "id": "status.mute",
+    "defaultMessage": "Mute @{name}"
+  },
+  {
+    "id": "status.mute_conversation",
+    "defaultMessage": "Mute conversation"
+  },
+  {
+    "id": "status.unmute_conversation",
+    "defaultMessage": "Unmute conversation"
+  },
+  {
+    "id": "status.block",
+    "defaultMessage": "Block @{name}"
+  },
+  {
+    "id": "status.report",
+    "defaultMessage": "Report @{name}"
+  },
+  {
+    "id": "status.share",
+    "defaultMessage": "Share"
+  },
+  {
+    "id": "status.pin",
+    "defaultMessage": "Pin on profile"
+  },
+  {
+    "id": "status.unpin",
+    "defaultMessage": "Unpin from profile"
+  },
+  {
+    "id": "status.embed",
+    "defaultMessage": "Embed"
+  }
+]

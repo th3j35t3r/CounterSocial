@@ -1,0 +1,10 @@
+[
+  {
+    "id": "lists.new.title_placeholder",
+    "defaultMessage": "New list title"
+  },
+  {
+    "id": "lists.new.create",
+    "defaultMessage": "Add list"
+  }
+]

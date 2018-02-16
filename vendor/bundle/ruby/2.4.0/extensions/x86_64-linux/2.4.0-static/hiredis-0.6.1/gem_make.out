@@ -1,0 +1,25 @@
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/hiredis-0.6.1/ext/hiredis_ext
+/home/mastodon/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171011-13178-1mgrioj.rb extconf.rb
+checking for sys/socket.h... yes
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  net.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  hiredis.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  sds.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  async.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  read.c
+ar rcs libhiredis.a net.o hiredis.o sds.o async.o read.o
+checking for rb_thread_fd_select()... yes
+creating Makefile
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/hiredis-0.6.1/ext/hiredis_ext
+make "DESTDIR=" clean
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/hiredis-0.6.1/ext/hiredis_ext
+make "DESTDIR="
+compiling connection.c
+compiling hiredis_ext.c
+compiling reader.c
+linking shared-object hiredis/ext/hiredis_ext.so
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/hiredis-0.6.1/ext/hiredis_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hiredis_ext.so ./.gem.20171011-13178-12xiknh/hiredis/ext

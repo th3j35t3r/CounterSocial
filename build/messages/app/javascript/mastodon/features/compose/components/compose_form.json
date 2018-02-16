@@ -1,0 +1,18 @@
+[
+  {
+    "id": "compose_form.placeholder",
+    "defaultMessage": "What is on your mind?"
+  },
+  {
+    "id": "compose_form.spoiler_placeholder",
+    "defaultMessage": "Write your warning here"
+  },
+  {
+    "id": "compose_form.publish",
+    "defaultMessage": "Toot"
+  },
+  {
+    "id": "compose_form.publish_loud",
+    "defaultMessage": "{publish}!"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "confirmations.delete.confirm",
+    "defaultMessage": "Delete"
+  },
+  {
+    "id": "confirmations.delete.message",
+    "defaultMessage": "Are you sure you want to delete this status?"
+  },
+  {
+    "id": "confirmations.block.confirm",
+    "defaultMessage": "Block"
+  }
+]

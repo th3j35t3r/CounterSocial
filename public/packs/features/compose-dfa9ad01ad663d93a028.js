@@ -1,0 +1,2 @@
+webpackJsonp([25],{771:function(n,e){throw new Error("Module build failed: SyntaxError: Adjacent JSX elements must be wrapped in an enclosing tag (89:6)\n\n  87 |     return (\n  88 |     <p>.</p>\n> 89 |       <div className='drawer'>\n     |       ^\n  90 |         {header}\n  91 | \n  92 |         <SearchContainer />\n")}});
+//# sourceMappingURL=compose-dfa9ad01ad663d93a028.js.map

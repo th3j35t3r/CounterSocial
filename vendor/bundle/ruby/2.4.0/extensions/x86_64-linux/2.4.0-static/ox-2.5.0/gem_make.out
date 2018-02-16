@@ -1,0 +1,48 @@
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/ox-2.5.0/ext/ox
+/home/mastodon/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171011-13178-1p9vbpa.rb extconf.rb
+>>>>> Creating Makefile for ruby version 2.4.1 on x86_64-linux <<<<<
+creating Makefile
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/ox-2.5.0/ext/ox
+make "DESTDIR=" clean
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/ox-2.5.0/ext/ox
+make "DESTDIR="
+compiling base64.c
+compiling builder.c
+compiling cache.c
+compiling cache8.c
+compiling dump.c
+compiling err.c
+err.c: In function ‘ox_err_raise’:
+err.c:21:1: warning: function might be candidate for attribute ‘noreturn’ [-Wsuggest-attribute=noreturn]
+ ox_err_raise(Err e) {
+ ^
+err.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-tautological-compare’
+compiling gen_load.c
+compiling obj_load.c
+compiling ox.c
+ox.c: In function ‘_ox_raise_error’:
+ox.c:1481:1: warning: function might be candidate for attribute ‘noreturn’ [-Wsuggest-attribute=noreturn]
+ _ox_raise_error(const char *msg, const char *xml, const char *current, const char* file, int line) {
+ ^
+ox.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-tautological-compare’
+compiling parse.c
+compiling sax.c
+compiling sax_as.c
+compiling sax_buf.c
+compiling sax_hint.c
+compiling special.c
+linking shared-object ox.so
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/ox-2.5.0/ext/ox
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ox.so ./.gem.20171011-13178-ue1rsw

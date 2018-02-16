@@ -1,0 +1,6 @@
+[
+  {
+    "id": "ui.beforeunload",
+    "defaultMessage": "Your draft will be lost if you leave Mastodon."
+  }
+]

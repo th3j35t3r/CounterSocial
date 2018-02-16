@@ -1,0 +1,4 @@
+.form-container
+  .flash-message
+    %p= t('doorkeeper.authorizations.show.title')
+    %input{ type: 'text', class: 'oauth-code', readonly: true, value: params[:code], onClick: 'select()' }

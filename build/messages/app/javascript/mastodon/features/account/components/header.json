@@ -1,0 +1,14 @@
+[
+  {
+    "id": "account.unfollow",
+    "defaultMessage": "Unfollow"
+  },
+  {
+    "id": "account.follow",
+    "defaultMessage": "Follow"
+  },
+  {
+    "id": "account.requested",
+    "defaultMessage": "Awaiting approval. Click to cancel follow request"
+  }
+]

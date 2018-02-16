@@ -1,0 +1,2 @@
+webpackJsonp([25],{795:function(n,e){throw new Error("Module build failed: SyntaxError: Unexpected token, expected } (145:11)\n\n  143 |                  fixedPosition: false                            //options: true makes it stick(fixed position) on scroll\n  144 |              });\n> 145 |          });\n      |            ^\n  146 | \n  147 | }    \n  148 |          \n")}});
+//# sourceMappingURL=compose-5dbf67abc658faa112ff.js.map

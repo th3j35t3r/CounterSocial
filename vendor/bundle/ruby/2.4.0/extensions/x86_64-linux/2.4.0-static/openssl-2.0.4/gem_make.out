@@ -1,0 +1,152 @@
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/openssl-2.0.4/ext/openssl
+/home/mastodon/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171011-13178-ay0d5d.rb extconf.rb
+checking for t_open() in -lnsl... no
+checking for socket() in -lsocket... no
+checking for openssl/ssl.h... yes
+checking for OpenSSL version is 0.9.8 or later... yes
+checking for OPENSSL_NO_SSL2 in openssl/opensslconf.h... yes
+checking for OPENSSL_NO_SSL3_METHOD in openssl/opensslconf.h... no
+checking for SSLv3_method()... yes
+checking for TLSv1_1_method()... yes
+checking for TLSv1_2_method()... yes
+checking for RAND_egd()... yes
+checking for ENGINE_load_builtin_engines() in openssl/engine.h with -Werror=deprecated-declarations... yes
+checking for ENGINE_load_openbsd_dev_crypto() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_openbsd_dev_crypto in openssl/engine.h... no
+checking for ENGINE_load_dynamic() in openssl/engine.h with -Werror=deprecated-declarations... yes
+checking for ENGINE_load_4758cca() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_4758cca in openssl/engine.h... no
+checking for ENGINE_load_aep() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_aep in openssl/engine.h... no
+checking for ENGINE_load_atalla() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_atalla in openssl/engine.h... no
+checking for ENGINE_load_chil() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_chil in openssl/engine.h... no
+checking for ENGINE_load_cswift() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_cswift in openssl/engine.h... no
+checking for ENGINE_load_nuron() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_nuron in openssl/engine.h... no
+checking for ENGINE_load_sureware() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_sureware in openssl/engine.h... no
+checking for ENGINE_load_ubsec() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_ubsec in openssl/engine.h... no
+checking for ENGINE_load_padlock() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_padlock in openssl/engine.h... no
+checking for ENGINE_load_capi() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_capi in openssl/engine.h... no
+checking for ENGINE_load_gmp() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_gmp in openssl/engine.h... no
+checking for ENGINE_load_gost() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_gost in openssl/engine.h... no
+checking for ENGINE_load_cryptodev() in openssl/engine.h with -Werror=deprecated-declarations... yes
+checking for ENGINE_load_aesni() in openssl/engine.h with -Werror=deprecated-declarations... no
+checking for ENGINE_load_aesni in openssl/engine.h... no
+checking for EVP_CIPHER_CTX_new()... yes
+checking for EVP_CIPHER_CTX_free()... yes
+checking for SSL_CTX_clear_options() in openssl/ssl.h with -Werror=deprecated-declarations... no
+checking for SSL_CTX_clear_options in openssl/ssl.h... yes
+checking for ASN1_TIME_adj()... yes
+checking for EVP_CIPHER_CTX_copy()... yes
+checking for EVP_PKEY_base_id()... yes
+checking for HMAC_CTX_copy()... yes
+checking for PKCS5_PBKDF2_HMAC()... yes
+checking for X509_NAME_hash_old()... yes
+checking for X509_STORE_CTX_get0_current_crl()... yes
+checking for X509_STORE_set_verify_cb()... yes
+checking for i2d_ASN1_SET_ANY()... yes
+checking for SSL_SESSION_cmp()... no
+checking for SSL_set_tlsext_host_name() in openssl/ssl.h with -Werror=deprecated-declarations... no
+checking for SSL_set_tlsext_host_name in openssl/ssl.h... yes
+checking for CRYPTO_THREADID.ptr in openssl/crypto.h... yes
+checking for EVP_PKEY_get0()... yes
+checking for SSL_CTX_set_next_proto_select_cb()... yes
+checking for EVP_CTRL_GCM_GET_TAG in openssl/evp.h... yes
+checking for EC_curve_nist2nid()... yes
+checking for X509_REVOKED_dup()... yes
+checking for X509_STORE_CTX_get0_store()... yes
+checking for SSL_CTX_set_alpn_select_cb()... yes
+checking for SSL_CTX_set1_curves_list() in openssl/ssl.h with -Werror=deprecated-declarations... no
+checking for SSL_CTX_set1_curves_list in openssl/ssl.h... yes
+checking for SSL_CTX_set_ecdh_auto() in openssl/ssl.h with -Werror=deprecated-declarations... no
+checking for SSL_CTX_set_ecdh_auto in openssl/ssl.h... yes
+checking for SSL_get_server_tmp_key() in openssl/ssl.h with -Werror=deprecated-declarations... no
+checking for SSL_get_server_tmp_key in openssl/ssl.h... yes
+checking for SSL_is_server()... yes
+checking for CRYPTO_lock()... yes
+checking for SSL.ctx in openssl/ssl.h... yes
+checking for BN_GENCB_new()... no
+checking for BN_GENCB_free()... no
+checking for BN_GENCB_get_arg()... no
+checking for EVP_MD_CTX_new()... no
+checking for EVP_MD_CTX_free()... no
+checking for HMAC_CTX_new()... no
+checking for HMAC_CTX_free()... no
+checking for RAND_pseudo_bytes() in openssl/rand.h with -Werror=deprecated-declarations... yes
+checking for X509_STORE_get_ex_data()... no
+checking for X509_STORE_set_ex_data()... no
+checking for X509_CRL_get0_signature()... no
+checking for X509_REQ_get0_signature()... no
+checking for X509_REVOKED_get0_serialNumber()... no
+checking for X509_REVOKED_get0_revocationDate()... no
+checking for X509_get0_tbs_sigalg()... no
+checking for X509_STORE_CTX_get0_untrusted()... no
+checking for X509_STORE_CTX_get0_cert()... no
+checking for X509_STORE_CTX_get0_chain()... no
+checking for OCSP_SINGLERESP_get0_id()... no
+checking for SSL_CTX_get_ciphers()... no
+checking for X509_up_ref()... no
+checking for X509_CRL_up_ref()... no
+checking for X509_STORE_up_ref()... no
+checking for SSL_SESSION_up_ref()... no
+checking for EVP_PKEY_up_ref()... no
+checking for SSL_CTX_set_tmp_ecdh_callback() in openssl/ssl.h with -Werror=deprecated-declarations... yes
+checking for SSL_CTX_set_min_proto_version() in openssl/ssl.h with -Werror=deprecated-declarations... no
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... no
+checking for SSL_CTX_get_security_level()... no
+checking for X509_get0_notBefore()... no
+checking for SSL_SESSION_get_protocol_version()... no
+creating extconf.h
+creating Makefile
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/openssl-2.0.4/ext/openssl
+make "DESTDIR=" clean
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/openssl-2.0.4/ext/openssl
+make "DESTDIR="
+compiling openssl_missing.c
+compiling ossl.c
+compiling ossl_asn1.c
+compiling ossl_bio.c
+compiling ossl_bn.c
+compiling ossl_cipher.c
+compiling ossl_config.c
+compiling ossl_digest.c
+compiling ossl_engine.c
+compiling ossl_hmac.c
+compiling ossl_ns_spki.c
+compiling ossl_ocsp.c
+compiling ossl_pkcs12.c
+compiling ossl_pkcs5.c
+compiling ossl_pkcs7.c
+compiling ossl_pkey.c
+compiling ossl_pkey_dh.c
+compiling ossl_pkey_dsa.c
+compiling ossl_pkey_ec.c
+compiling ossl_pkey_rsa.c
+compiling ossl_rand.c
+compiling ossl_ssl.c
+compiling ossl_ssl_session.c
+compiling ossl_x509.c
+compiling ossl_x509attr.c
+compiling ossl_x509cert.c
+compiling ossl_x509crl.c
+compiling ossl_x509ext.c
+compiling ossl_x509name.c
+compiling ossl_x509req.c
+compiling ossl_x509revoked.c
+compiling ossl_x509store.c
+linking shared-object openssl.so
+
+current directory: /home/mastodon/live/vendor/bundle/ruby/2.4.0/gems/openssl-2.0.4/ext/openssl
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 openssl.so ./.gem.20171011-13178-lk1srk

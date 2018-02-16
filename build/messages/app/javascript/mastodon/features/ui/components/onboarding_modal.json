@@ -1,0 +1,18 @@
+[
+  {
+    "id": "column.home",
+    "defaultMessage": "Home"
+  },
+  {
+    "id": "column.notifications",
+    "defaultMessage": "Notifications"
+  },
+  {
+    "id": "column.community",
+    "defaultMessage": "Local Timeline"
+  },
+  {
+    "id": "column.public",
+    "defaultMessage": "Network Status"
+  }
+]

@@ -1,0 +1,2 @@
+webpackJsonp([25],{802:function(t,n){throw new Error("Module build failed: SyntaxError: Expected corresponding JSX closing tag for <td> (126:4)\n\n  124 |           <td><div align='center'><img src='https://counter.social/CustomStuff/flags/ukraine.png' title='Ukraine' alt='Ukraine' width='33' height='33' /></div></td>\n  125 |         </tr>\n> 126 |     </table>\n      |     ^\n  127 |       </td></tr>\n  128 | </table> \n  129 | <table width=\"100%\"  border=\"0\"/>\n")}});
+//# sourceMappingURL=getting_started-f0e110e5cafbea4675bb.js.map

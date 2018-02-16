@@ -1,0 +1,38 @@
+[
+  {
+    "id": "privacy.public.short",
+    "defaultMessage": "Public"
+  },
+  {
+    "id": "privacy.public.long",
+    "defaultMessage": "Post to public timelines"
+  },
+  {
+    "id": "privacy.unlisted.short",
+    "defaultMessage": "Unlisted"
+  },
+  {
+    "id": "privacy.unlisted.long",
+    "defaultMessage": "Do not show in public timelines"
+  },
+  {
+    "id": "privacy.private.short",
+    "defaultMessage": "Followers-only"
+  },
+  {
+    "id": "privacy.private.long",
+    "defaultMessage": "Post to followers only"
+  },
+  {
+    "id": "privacy.direct.short",
+    "defaultMessage": "Direct"
+  },
+  {
+    "id": "privacy.direct.long",
+    "defaultMessage": "Post to mentioned users only"
+  },
+  {
+    "id": "privacy.change",
+    "defaultMessage": "Adjust status privacy"
+  }
+]

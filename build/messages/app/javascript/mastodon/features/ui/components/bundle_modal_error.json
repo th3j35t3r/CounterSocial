@@ -1,0 +1,14 @@
+[
+  {
+    "id": "bundle_modal_error.message",
+    "defaultMessage": "Something went wrong while loading this component."
+  },
+  {
+    "id": "bundle_modal_error.retry",
+    "defaultMessage": "Try again"
+  },
+  {
+    "id": "bundle_modal_error.close",
+    "defaultMessage": "Close"
+  }
+]

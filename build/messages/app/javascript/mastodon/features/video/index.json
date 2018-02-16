@@ -1,0 +1,38 @@
+[
+  {
+    "id": "video.play",
+    "defaultMessage": "Play"
+  },
+  {
+    "id": "video.pause",
+    "defaultMessage": "Pause"
+  },
+  {
+    "id": "video.mute",
+    "defaultMessage": "Mute sound"
+  },
+  {
+    "id": "video.unmute",
+    "defaultMessage": "Unmute sound"
+  },
+  {
+    "id": "video.hide",
+    "defaultMessage": "Hide video"
+  },
+  {
+    "id": "video.expand",
+    "defaultMessage": "Expand video"
+  },
+  {
+    "id": "video.close",
+    "defaultMessage": "Close video"
+  },
+  {
+    "id": "video.fullscreen",
+    "defaultMessage": "Full screen"
+  },
+  {
+    "id": "video.exit_fullscreen",
+    "defaultMessage": "Exit full screen"
+  }
+]

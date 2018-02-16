@@ -1,0 +1,10 @@
+[
+  {
+    "id": "report.placeholder",
+    "defaultMessage": "Additional comments"
+  },
+  {
+    "id": "report.submit",
+    "defaultMessage": "Submit"
+  }
+]

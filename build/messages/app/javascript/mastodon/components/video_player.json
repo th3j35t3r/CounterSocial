@@ -1,0 +1,14 @@
+[
+  {
+    "id": "video_player.toggle_sound",
+    "defaultMessage": "Toggle sound"
+  },
+  {
+    "id": "video_player.toggle_visible",
+    "defaultMessage": "Toggle visibility"
+  },
+  {
+    "id": "video_player.expand",
+    "defaultMessage": "Expand video"
+  }
+]

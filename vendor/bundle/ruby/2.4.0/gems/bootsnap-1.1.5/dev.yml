@@ -1,0 +1,9 @@
+env:
+  BOOTSNAP_PEDANTIC: '1'
+
+up:
+  - ruby: 2.3.3
+  - bundler
+commands:
+  test: 'rake compile && exec bin/testunit'
+  style: 'exec rubocop -D'

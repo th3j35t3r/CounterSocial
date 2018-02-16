@@ -1,0 +1,16 @@
+- content_for :header_tags do
+  = javascript_pack_tag 'public', integrity: true, crossorigin: 'anonymous'
+
+- content_for :content do 
+  .container= yield
+  .footer
+    - if !user_signed_in? && single_user_mode?
+      %span.single-user-login
+        = link_to t('auth.login'), new_user_session_path
+        &mdash;
+      %span.domain= link_to site_hostname, about_path
+    - else
+      %span.domain= link_to site_hostname, root_path
+    
+
+= render template: 'layouts/application'

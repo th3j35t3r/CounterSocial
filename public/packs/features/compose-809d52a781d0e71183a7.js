@@ -1,0 +1,2 @@
+webpackJsonp([25],{795:function(n,r){throw new Error("Module build failed: SyntaxError: Expected corresponding JSX closing tag for <td> (116:4)\n\n  114 |       </table>\n  115 |       .\n> 116 |     </tr>\n      |     ^\n  117 |   </table>               \n  118 |             \n  119 |             \n")}});
+//# sourceMappingURL=compose-809d52a781d0e71183a7.js.map

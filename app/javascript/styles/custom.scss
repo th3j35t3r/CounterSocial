@@ -1,0 +1,12 @@
+/* Import base css */
+@import 'application';
+
+/* .drawer is 300px and each of the .columns are 300, requiring 1290px to display them as intended
+   this rule makes the view fit into a smaller space. */
+   
+/* @media screen and (min-width: 1025px) and (max-width: 1290px) {
+  .column,
+  .drawer {
+    flex: 1;
+  }
+}*/

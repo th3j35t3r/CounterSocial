@@ -1,0 +1,10 @@
+[
+  {
+    "id": "home.column_settings.filter_regex",
+    "defaultMessage": "Filter out by regular expressions"
+  },
+  {
+    "id": "home.settings",
+    "defaultMessage": "Column settings"
+  }
+]

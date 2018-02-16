@@ -1,0 +1,2 @@
+webpackJsonp([25],{771:function(n,o){throw new Error("Module build failed: SyntaxError: Unterminated JSX contents (108:12)\n\n  106 |           </Motion>\n  107 |         </div>\n> 108 |       </div>\n      |             ^\n  109 |     );\n  110 |   }\n  111 | \n")}});
+//# sourceMappingURL=compose-201304c67c3299cf5dee.js.map

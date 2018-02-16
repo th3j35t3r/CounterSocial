@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html class="no_touch" lang="en-US"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	
+	<script async="" src="Slack_files/slack_beacon.js"></script><script>
+window.ts_endpoint_url = "https:\/\/slack.com\/beacon\/timing";
+
+(function(e) {
+	var n=Date.now?Date.now():+new Date,r=e.performance||{},t=[],a={},i=function(e,n){for(var r=0,a=t.length,i=[];a>r;r++)t[r][e]==n&&i.push(t[r]);return i},o=function(e,n){for(var r,a=t.length;a--;)r=t[a],r.entryType!=e||void 0!==n&&r.name!=n||t.splice(a,1)};r.now||(r.now=r.webkitNow||r.mozNow||r.msNow||function(){return(Date.now?Date.now():+new Date)-n}),r.mark||(r.mark=r.webkitMark||function(e){var n={name:e,entryType:"mark",startTime:r.now(),duration:0};t.push(n),a[e]=n}),r.measure||(r.measure=r.webkitMeasure||function(e,n,r){n=a[n].startTime,r=a[r].startTime,t.push({name:e,entryType:"measure",startTime:n,duration:r-n})}),r.getEntriesByType||(r.getEntriesByType=r.webkitGetEntriesByType||function(e){return i("entryType",e)}),r.getEntriesByName||(r.getEntriesByName=r.webkitGetEntriesByName||function(e){return i("name",e)}),r.clearMarks||(r.clearMarks=r.webkitClearMarks||function(e){o("mark",e)}),r.clearMeasures||(r.clearMeasures=r.webkitClearMeasures||function(e){o("measure",e)}),e.performance=r,"function"==typeof define&&(define.amd||define.ajs)&&define("performance",[],function(){return r}) // eslint-disable-line
+})(window);
+
+</script>
+<script>
+
+
+;(function() {
+
+
+
+window.TSMark = function(mark_label) {
+	if (!window.performance || !window.performance.mark) return;
+	performance.mark(mark_label);
+};
+window.TSMark('start_load');
+
+
+window.TSMeasureAndBeacon = function(measure_label, start_mark_label) {
+	if (start_mark_label === 'start_nav' && window.performance && window.performance.timing) {
+		window.TSBeacon(measure_label, (new Date()).getTime() - performance.timing.navigationStart);
+		return;
+	}
+	if (!window.performance || !window.performance.mark || !window.performance.measure) return;
+	performance.mark(start_mark_label + '_end');
+	try {
+		performance.measure(measure_label, start_mark_label, start_mark_label + '_end');
+		window.TSBeacon(measure_label, performance.getEntriesByName(measure_label)[0].duration);
+	} catch (e) {
+		
+	}
+};
+
+
+if ('sendBeacon' in navigator) {
+	window.TSBeacon = function(label, value) {
+		var endpoint_url = window.ts_endpoint_url || 'https://slack.com/beacon/timing';
+		navigator.sendBeacon(endpoint_url + '?data=' + encodeURIComponent(label + ':' + value), '');
+	};
+} else {
+	window.TSBeacon = function(label, value) {
+		var endpoint_url = window.ts_endpoint_url || 'https://slack.com/beacon/timing';
+		(new Image()).src = endpoint_url + '?data=' + encodeURIComponent(label + ':' + value);
+	};
+}
+})();
+</script>
+ 
+
+<script>
+window.TSMark('step_load');
+</script>	<style type="text/css">
+<!--
+body {
+	background-color: #282c37;
+}
+-->
+</style><noscript><meta http-equiv="refresh" content="0; URL=/?nojsmode=1" /></noscript>
+<script type="text/javascript">
+if(self!==top)window.document.write("\u003Cstyle>body * {display:none !important;}\u003C\/style>\u003Ca href=\"#\" onclick="+
+"\"top.location.href=window.location.href\" style=\"display:block !important;padding:10px\">Go to Slack.com\u003C\/a>");
+
+(function() {
+	var timer;
+	if (self !== top) {
+		timer = window.setInterval(function() {
+			if (window.$) {
+				try {
+					$('#page').remove();
+					$('#client-ui').remove();
+					window.TS = null;
+					window.clearInterval(timer);
+				} catch(e) {}
+			}
+		}, 200);
+	}
+}());
+
+</script>
+
+<script>
+
+(function() {
+
+
+	window.callSlackAPIUnauthed = function(method, args, callback) {
+		var timestamp = Date.now() / 1000;  
+		var version = (window.TS && TS.boot_data && TS.boot_data.version_uid) ? TS.boot_data.version_uid.substring(0, 8) : 'noversion';
+		var url = '/api/' + method + '?_x_id=' + version + '-' + timestamp;
+
+		var req = new XMLHttpRequest();
+
+		req.onreadystatechange = function() {
+			if (req.readyState == 4) {
+				req.onreadystatechange = null;
+				var obj;
+
+				if (req.status == 200 || req.status == 429) {
+					try {
+						obj = JSON.parse(req.responseText);
+					} catch (err) {
+						TS.warn(8675309, 'unable to do anything with api rsp');
+					}
+				}
+
+				obj = obj || {
+					ok: false,
+				};
+
+				callback(obj.ok, obj, args);
+			}
+		};
+
+		var async = true;
+		req.open('POST', url, async);
+
+		var form_data = new FormData();
+		var has_data = false;
+		Object.keys(args).forEach(function(k) {
+			if (k[0] === '_') return;
+			form_data.append(k, args[k]);
+			has_data = true;
+		});
+
+		if (has_data) {
+			req.send(form_data);
+		} else {
+			req.send();
+		}
+	};
+})();
+</script>
+
+	<script type="text/javascript" src="Slack_files/webpack.js" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)"></script><script>(function n(){!function(){function e(e,t,n){t=t||{};var r=e.ownerDocument||e,i=r.createEvent?r.createEvent("CustomEvent"):r.createEventObject();i.initCustomEvent&&i.initCustomEvent(t.type,!!t.bubbles,!!t.cancelable,t.detail);for(var a in t)i[a]=t[a];return setTimeout(function(){try{e.dispatchEvent?e.dispatchEvent(i):e.fireEvent("on"+t.type,r.createEventObject())}catch(n){var a=e["listen"+t.type];if(a)for(var o=0;o<a.length;++o)try{a[o].call(e,i)}catch(e){}}n()},0),this}function t(e,t,n){function r(e,t){try{var n=e.ownerDocument;if(n.createEventObject){var r=n.createEventObject();e.fireEvent("on"+t,r)}else r=n.createEvent("HTMLEvents"),r.initEvent(t,!0,!0),e.dispatchEvent(r)}catch(e){}}var i=!0,a=e.className&&e.className.indexOf("fancified")!=-1;if(window.jQuery){var o=window.jQuery(e);try{if(o.selectBoxIt)o.selectBoxIt("selectOption",o.val());else if(o.data("chosen")||o.chosen)o.trigger("chosen:updated").trigger("liszt:updated");else if(o.data("chooserElement"))o.trigger("change");else if(o.fancySelect)o.get("fancySelect").select("value",o.val());else if(o.selectBox)o.selectBox("value",o.val());else if(o.selectric)o.selectric("refresh");else if(o.coreUISelect){var s=o.data("coreUISelect");s.isSelectShow=!0,s.changeDropdownData(),s.isSelectShow=!1}else if(o.data("myJSPulldownObject")){var l=o.data("myJSPulldownObject");l.setToValue(o.val())}else if(o.fancyfields)o.setVal(o.val());else if(o.data("select2"));else if(o.data("selectize"))i=!1,o.data("selectize").setValue(o.val());else if(o.hasClass("fancified"))o.trigger("update");else if(o.selectmenu){var c=o.val();try{o.selectmenu("value",o[0].options[0].value)}catch(e){}o.selectmenu("value",c)}else o.hasClass("select-hidden")&&o.next("div.select-styled").length&&o.next("div.select-styled").next(".select-options").length&&(ulElement=o.next("div.select-styled").next(".select-options"),liElement=ulElement.find("li[rel='"+o.val()+"']"),liElement.click());o.trigger("change")}catch(e){}}i&&(a&&r(e,"update"),r(e,"change"),r(e,"blur")),n()}function n(t,n,r,i){var a=t.value;e(t,{type:"keydown",keyCode:n,which:n,charCode:n,bubbles:!0},function(){e(t,{type:"keypress",keyCode:n,which:n,charCode:n,bubbles:!0},function(){setTimeout(function(){var o=t.value;a==o&&(t.value=r),e(t,{type:"input",keyCode:n,which:n,charCode:n,bubbles:!0},function(){e(t,{type:"keyup",keyCode:n,which:n,charCode:n,bubbles:!0},function(){i()})})},1)})})}function r(e,t,i,a){if(!t||""==t)return void a();var o=t.charCodeAt(0);i+=t.charAt(0),n(e,o,i,function(){r(e,t.substring(1),i,a)})}function i(t,n,r){if(window.abineTriggerChangeInProgress)return void setTimeout(function(){i(t,n,r)},100);var a=!0;window.abineTriggerChangeInProgress=!0;try{if(window.jQuery){var o=window.jQuery(t);o.data("rawMaskFn")||o.mask||o.CardPhoneFormatting?o.focus().val(n).trigger("input").trigger("paste"):o.next(".inner").find(".options").length&&(a=!1,optionsContainer=o.next(".inner").find(".options"),optionElements=optionsContainer.find("span"),optionElements.each(function(){optionElement=$(this),optionElementHtml=$(optionElement).html(),optionElementHtml.toLowerCase().indexOf(n)>-1&&$(optionElement).click()}))}}catch(e){}a?e(t,{type:"change"},function(){e(t,{type:"blur"},function(){try{var e=new Event("input",{bubbles:!0,cancelable:!0});t.dispatchEvent(e)}catch(e){}window.abineTriggerChangeInProgress=!1,r()})}):(window.abineTriggerChangeInProgress=!1,r())}function a(t,n,a){try{t.ownerDocument.defaultView.focus()}catch(e){}e(t,{type:"focus"},function(){e(t,{type:"click"},function(){r(t,n,"",function(){i(t,n,function(){e(document,{type:"abineFilled"},function(){a()})})})})})}function o(n,r,i,a){var o=/[\s]+/g,s=(r||"").toLowerCase().replace(o,""),l=function(){e(document,{type:"abineFilled"},function(){a()})},c=!1,u=!1,d=n.getElementsByTagName("option");if(d&&d.length>0){for(var h=-1,f=0;f<d.length;f++){var p=(d[f].text||"").toLowerCase().replace(o,""),m=(d[f].getAttribute("value")||"").toLowerCase().replace(o,"");if(m==s||p==s){d[f].selected||(c=!0,d[f].selected=!0),u=!0;break}h==-1&&p.indexOf(s)!=-1&&(h=f)}u||h==-1||i||d[h].selected||(c=!0,d[h].selected=!0,u=!0)}n.setAttribute("abineFillResponse",u),c?t(n,r,l):l()}function s(){var e=document.getElementsByClassName("abineFillTarget");if(e.length>0)return e[0];for(var t=0;t<frames.length;t++)try{var e=frames[t].document.getElementsByClassName("abineFillTarget");if(e.length>0)return e[0]}catch(e){}return null}function l(){var n=document.createElement("div");n.id="abineFillElement","undefined"!=typeof paypal&&n.setAttribute("data-paypal","1"),"undefined"!=typeof OffAmazonPayments&&n.setAttribute("data-amazon","1"),"undefined"!=typeof MasterPass&&n.setAttribute("data-masterpass","1"),document.documentElement.appendChild(n),n.addEventListener("fill",function(){var t=s();if(t){var r=n.getAttribute("value");a(t,r,function(){})}else e(document,{type:"abineFilled"},function(){})},!1),n.addEventListener("fillSelect",function(){var t=s();if(t){var r=n.getAttribute("value"),i=!!n.getAttribute("skipPartial");o(t,r,i,function(){})}else e(document,{type:"abineFilled"},function(){})}),n.addEventListener("triggerChange",function(){var e=s(),r=n.getAttribute("value");e&&(e.nodeName.match(/select/i)?t(e,r,function(){}):i(e,r,function(){}))})}l()}()})()</script>
+
+			
+	
+		<script>
+			if (window.location.host == 'slack.com' && window.location.search.indexOf('story') < 0) {
+				document.cookie = '__cvo_skip_doc=' + escape(document.URL) + '|' + escape(document.referrer) + ';path=/';
+			}
+		</script>
+	
+
+		<script type="text/javascript">
+		
+		try {
+			if(window.location.hash && !window.location.hash.match(/^(#?[a-zA-Z0-9_]*)$/)) {
+				window.location.hash = '';
+			}
+		} catch(e) {}
+		
+	</script>
+
+	<script type="text/javascript">
+				
+			window.optimizely = [];
+			window.dataLayer = [];
+			window.ga = false;
+		
+	
+				(function(e,c,b,f,d,g,a){e.SlackBeaconObject=d;
+		e[d]=e[d]||function(){(e[d].q=e[d].q||[]).push([1*new Date(),arguments])};
+		e[d].l=1*new Date();g=c.createElement(b);a=c.getElementsByTagName(b)[0];
+		g.async=1;g.src=f;a.parentNode.insertBefore(g,a)
+		})(window,document,"script","https://a.slack-edge.com/bv1-1/slack_beacon.5dbbc3dd9f37d8bc2f4e.min.js","sb");
+		sb('set', 'token', '3307f436963e02d4f9eb85ce5159744c');
+
+				sb('track', 'pageview');
+
+		
+		function track(a) {
+			if(window.ga) ga('send','event','web', a);
+			if(window.sb) sb('track', a);
+		}
+		
+
+	</script>
+
+	
+	<meta name="referrer" content="no-referrer">
+		<meta name="superfish" content="nofish">
+
+	<script type="text/javascript">
+
+
+
+var TS_last_log_date = null;
+var TSMakeLogDate = function() {
+	var date = new Date();
+
+	var y = date.getFullYear();
+	var mo = date.getMonth()+1;
+	var d = date.getDate();
+
+	var time = {
+	  h: date.getHours(),
+	  mi: date.getMinutes(),
+	  s: date.getSeconds(),
+	  ms: date.getMilliseconds()
+	};
+
+	Object.keys(time).map(function(moment, index) {
+		if (moment == 'ms') {
+			if (time[moment] < 10) {
+				time[moment] = time[moment]+'00';
+			} else if (time[moment] < 100) {
+				time[moment] = time[moment]+'0';
+			}
+		} else if (time[moment] < 10) {
+			time[moment] = '0' + time[moment];
+		}
+	});
+
+	var str = y + '/' + mo + '/' + d + ' ' + time.h + ':' + time.mi + ':' + time.s + '.' + time.ms;
+	if (TS_last_log_date) {
+		var diff = date-TS_last_log_date;
+		//str+= ' ('+diff+'ms)';
+	}
+	TS_last_log_date = date;
+	return str+' ';
+}
+
+var parseDeepLinkRequest = function(code) {
+	var m = code.match(/"id":"([CDG][A-Z0-9]{8})"/);
+	var id = m ? m[1] : null;
+
+	m = code.match(/"team":"(T[A-Z0-9]{8})"/);
+	var team = m ? m[1] : null;
+
+	m = code.match(/"message":"([0-9]+\.[0-9]+)"/);
+	var message = m ? m[1] : null;
+
+	return { id: id, team: team, message: message };
+}
+
+if ('rendererEvalAsync' in window) {
+	var origRendererEvalAsync = window.rendererEvalAsync;
+	window.rendererEvalAsync = function(blob) {
+		try {
+			var data = JSON.parse(decodeURIComponent(atob(blob)));
+			if (data.code.match(/handleDeepLink/)) {
+				var request = parseDeepLinkRequest(data.code);
+				if (!request.id || !request.team || !request.message) return;
+
+				request.cmd = 'channel';
+				TSSSB.handleDeepLinkWithArgs(JSON.stringify(request));
+				return;
+			} else {
+				origRendererEvalAsync(blob);
+			}
+		} catch (e) {
+		}
+	}
+}
+</script>
+
+
+
+<script type="text/javascript">
+
+	var TSSSB = {
+		call: function() {
+			return false;
+		}
+	};
+
+</script>
+<script>TSSSB.env = (function() {
+
+
+	var v = {
+		win_ssb_version: null,
+		win_ssb_version_minor: null,
+		mac_ssb_version: null,
+		mac_ssb_version_minor: null,
+		mac_ssb_build: null,
+		lin_ssb_version: null,
+		lin_ssb_version_minor: null,
+		desktop_app_version: null,
+	};
+
+	var is_win = (navigator.appVersion.indexOf('Windows') !== -1);
+	var is_lin = (navigator.appVersion.indexOf('Linux') !== -1);
+	var is_mac = !!(navigator.userAgent.match(/(OS X)/g));
+
+	if (navigator.userAgent.match(/(Slack_SSB)/g) || navigator.userAgent.match(/(Slack_WINSSB)/g)) {
+		
+		var parts = navigator.userAgent.split('/');
+		var version_str = parts[parts.length - 1];
+		var version_float = parseFloat(version_str);
+		var version_parts = version_str.split('.');
+		var version_minor = (version_parts.length == 3) ? parseInt(version_parts[2], 10) : 0;
+
+		if (navigator.userAgent.match(/(AtomShell)/g)) {
+			
+			if (is_lin) {
+				v.lin_ssb_version = version_float;
+				v.lin_ssb_version_minor = version_minor;
+			} else if (is_win) {
+				v.win_ssb_version = version_float;
+				v.win_ssb_version_minor = version_minor;
+			} else if (is_mac) {
+				v.mac_ssb_version = version_float;
+				v.mac_ssb_version_minor = version_minor;
+			}
+
+			if (version_parts.length >= 3) {
+				v.desktop_app_version = {
+					major: parseInt(version_parts[0], 10),
+					minor: parseInt(version_parts[1], 10),
+					patch: parseInt(version_parts[2], 10),
+				};
+			}
+		}
+	}
+
+	return v;
+})();
+</script>
+
+
+	<script type="text/javascript">
+		
+		window.addEventListener('load', function() {
+			var was_TS = window.TS;
+			delete window.TS;
+			if (was_TS) window.TS = was_TS;
+		});
+	</script>
+	        <title>CounterSocial Team Space</title>
+    
+        
+    <meta name="robots" content="noindex,nofollow">
+
+	
+		
+	
+	
+		
+	
+						
+	
+	
+
+																
+	
+	
+	
+	
+	
+	
+		<!-- output_css "sk_adapter" -->
+    <link href="Slack_files/rollup-slack_kit_legacy_adapters.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+
+			<!-- output_css "core" -->
+    <link href="Slack_files/rollup-plastic.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+
+		<!-- output_css "before_file_pages" -->
+
+	<!-- output_css "file_pages" -->
+
+	
+				<!-- output_css "regular" -->
+    <link href="Slack_files/signin.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+    <link href="Slack_files/index.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+    <link href="Slack_files/lato-2-compressed.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+    <link href="Slack_files/sticky_nav.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+    <link href="Slack_files/footer.css" rel="stylesheet" type="text/css" crossorigin="anonymous" onload="window._cdn &amp;&amp; _cdn.ok(this, arguments)" onerror="window._cdn &amp;&amp; _cdn.failed(this, arguments)">
+
+	
+
+	
+	
+		<meta name="robots" content="noindex, nofollow">
+	
+
+	
+
+
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://a.slack-edge.com/436da/marketing/img/meta/ios-152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://a.slack-edge.com/436da/marketing/img/meta/ios-144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://a.slack-edge.com/436da/marketing/img/meta/ios-120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://a.slack-edge.com/436da/marketing/img/meta/ios-114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://a.slack-edge.com/436da/marketing/img/meta/ios-72.png">
+<link rel="apple-touch-icon-precomposed" href="https://a.slack-edge.com/436da/marketing/img/meta/ios-57.png">
+
+<meta name="msapplication-TileColor" content="#282c37">
+
+	
+<style type="text/css"></style></head><div id="abineFillElement"></div>
+
+<body bgcolor="#282c37">
+<table width=100% height=100% bgcolor="#282c37">
+
+		  			<p>
+		  			  <script>
+		
+			var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+			if (w > 1440) document.querySelector('body').classList.add('widescreen');
+		
+		            </script>
+		  			</p>
+<nav class="mobile_menu menu_scroll" aria-hidden="true">
+	<div class="mobile_menu_wrapper">
+	<div class="mobile_menu_header">
+			<a href="https://slack.com/" class="logo" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_logo"></a>
+			<a href="#" class="close" aria-label="close" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_menu_close"><ts-icon class="ts_icon ts_icon_times"></ts-icon></a>
+	</div>
+					<ul>
+				<li><a href="https://slack.com/is" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_product">Product</a></li>
+				<li><a href="https://slack.com/pricing?ui_step=55&amp;ui_element=5" class="mobile_nav_pricing" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_pricing">Pricing</a></li>				<li><a href="https://get.slack.help/hc/en-us" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_support">Support</a></li>
+				<li><a href="https://countersocial.slack.com/get" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_download">Download <span class="optional_desktop_nav_message">the Slack app</span></a></li>
+			</ul>
+
+			
+				
+				<li><a href="https://slack.com/signin" data-gtm-click="optout_nav_signin" target="_blank" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_sign_in"><ts-icon class="ts_icon small float_none team_icon ts_icon_plus default signup_icon"></ts-icon> <span class="switcher_label">Sign in to another workspace</span></a></li>
+
+				<li><a data-gtm-click="SignUp,optout_nav_create_team" href="https://slack.com/create" class="" target="_blank" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_create_team"><ts-icon class="ts_icon small float_none team_icon ts_icon_slack_pillow default signup_icon"></ts-icon> <span class="switcher_label">Create a new workspace</span></a></li>			</ul>
+			</div>
+</nav>
+
+	
+	<div id="page">
+
+	  <div id="page_contents" data-qa="page_contents" class="">
+
+
+<div class="span_4_of_6 col float_none margin_auto no_right_padding">
+	
+	
+<p id="error_ratelimit" class="alert alert_warning" style="display: none;">
+	<i class="ts_icon ts_icon_warning"></i>
+	
+	<strong>Too many login failures!</strong><br class="hide_on_mobile">
+	Apologies! There were too many SMS message requests in a short period, so you’ll have to wait a moment to try again.
+	</p>
+<p id="error_unknown" class="alert alert_error" style="display: none;">
+	<i class="ts_icon ts_icon_warning"></i> Hmmm... something went wrong. Please try again.</p></div>
+
+	
+<div class="real_content card align_center span_4_of_6 col float_none margin_auto large_bottom_margin right_padding large_bottom_padding">
+	<h1 id="signin_header" class="tiny_bottom_margin"> 
+	<span class="break_word">Counter Social Team Space</span>
+	</h1>
+
+	<p class="medium_bottom_margin">
+	  <input name="signin" value="1" type="hidden">
+		  <input name="redir" value="" type="hidden">
+					  <input name="crumb" value="s-1509112567-3783dbe874-☃" type="hidden">
+	  </p>
+
+	
+	<div class="col span_4_of_6 float_none margin_auto signin_card"><form id="signin_form" action="https://countersocial.slack.com/" method="post" accept-encoding="UTF-8" abineguid="C6BAF8EBEC9E4723869A8BEBFC9F2559">
+	  <p class=" no_bottom_margin">
+				<input id="email" name="email" size="40" placeholder="you@example.com" type="email">
+		  </p>
+
+			<p class=" small_bottom_margin">
+				<input id="password" name="password" size="40" placeholder="password" type="password">
+			</p>
+
+			
+						
+
+			<p><button id="signin_btn" type="submit" class="btn btn_large full_width ladda-button" data-style="expand-right"><span class="ladda-label">Sign in</span><span class="ladda-spinner"></span></button></p>
+
+			<div class="align_left">
+				<label class="checkbox normal inline_block small_right_margin"><input name="remember" checked="checked" type="checkbox"> Remember me</label>
+			</div>
+	
+			<div class="align_left small_top_margin">
+				</div>
+
+		</form>
+		
+
+	<p class="small clear_both taller_line_height">
+	  </p>
+</div>
+	
+<div class="real_content align_center">
+			<p>
+			  <!-- slack-www-hhvm-0ffb5346b63325ded / 2017-10-27 06:56:07 / va4374dc0e2be229449342d727b07b58b040a99b0 / B:H -->
+</p>
+		  </div>
+
+					
+	</div>
+	</div>
+
+
+	
+
+
+</body>
+<div class="abineContentPanel" style="background-color: transparent ! important; margin: 0px ! important; padding: 0px ! important; opacity: 1 ! important; z-index: 2147483647 ! important; position: absolute ! important; overflow: hidden ! important; border-width: 0px ! important; visibility: visible ! important; background-image: none; background-repeat: repeat; background-attachment: scroll; background-clip: border-box; background-origin: padding-box; background-position: 0% 0%; background-size: auto auto; display: none;"><iframe class="abineContentFrame" allowtransparency="true" scrolling="no" src="Slack_files/panel.html" id="abine13373062doNotRemove" style="position:relative !important;display:block !important;background:transparent !important;border-width:0px !important;left:0px !important;top:0px !important;visibility:visible !important;opacity:1 !important;filter:alpha(opacity:100) !important;margin:0 !important;padding:0 !important;height:0px !important;width:450px" frameborder="0" width="450px" height="0px"></iframe></div>
+</table>
+</html>

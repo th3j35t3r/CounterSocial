@@ -1,0 +1,2 @@
+webpackJsonp([25],{771:function(n,r){throw new Error("Module build failed: SyntaxError: Expected corresponding JSX closing tag for <img> (89:103)\n\n  87 |     return (\n  88 |       <div className='drawer'>\n> 89 |         <p><img src='https://counter.social/CustomStuff/logotilt-final.png' width='100%' height='100%'></p>\n     |                                                                                                        ^\n  90 |         {header}\n  91 | \n  92 |         <SearchContainer />\n")}});
+//# sourceMappingURL=compose-53c6d0dc9dc06f57373e.js.map

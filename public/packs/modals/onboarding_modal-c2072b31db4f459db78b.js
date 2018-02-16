@@ -1,0 +1,2 @@
+webpackJsonp([24],{815:function(n,e){throw new Error("Module build failed: SyntaxError: Unexpected token (120:105)\n\n  118 | \n  119 |         <div>\n> 120 |           <div className='figure non-interactive' style={{ marginBottom: 0 }}><ColumnHeader icon='globe' \"NetWork Status\" /></div>\n      |                                                                                                          ^\n  121 |         </div>\n  122 |       </div>\n  123 | \n")}});
+//# sourceMappingURL=onboarding_modal-c2072b31db4f459db78b.js.map
